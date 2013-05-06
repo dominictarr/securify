@@ -1,0 +1,23 @@
+[
+  "_debugger",
+  "child_process",
+  "cluster",
+  "console",
+  "constants",
+  "dgram",
+  "dns",
+  "domain",
+  "events",
+  "fs",
+  "http",
+  "https",
+  "module",
+  "net",
+  "path",
+  "readline",
+  "repl",
+  "timers",
+  "tls",
+  "tty",
+  "vm"
+]
