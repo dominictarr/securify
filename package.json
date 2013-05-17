@@ -16,7 +16,9 @@
     "contextify": "~0.1.5",
     "level-manifest": "~1.1.1",
     "shoe": "0.0.10",
-    "stack": "~0.1.0"
+    "stack": "~0.1.0",
+    "insert-module-globals": "~0.2.1",
+    "brfs": "0.0.5"
   },
   "devDependencies": {
     "level-sublevel": "~4.6.4",

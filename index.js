@@ -76,7 +76,6 @@ if(!module.parent) {
   var domain = createFactory(bundle)(db)
   setTimeout(function () {
     db.close(function (err, cb) {
-      console.error('dispose')
       domain.dispose()
     })
   }, 3000)
