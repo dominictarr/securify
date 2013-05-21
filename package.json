@@ -18,7 +18,8 @@
     "shoe": "0.0.10",
     "stack": "~0.1.0",
     "insert-module-globals": "~0.2.1",
-    "brfs": "0.0.5"
+    "brfs": "0.0.5",
+    "through": "~2.3.4"
   },
   "devDependencies": {
     "level-sublevel": "~4.6.4",
