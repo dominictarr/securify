@@ -31,13 +31,13 @@ function createContext () {
       console.error('setInterval', fun.name || fun.toString().substring(0, 100)+'...')
     
       var int = setInterval(fun, i)
-      console.error(int, int.__proto__)
       intervals.push(int)
       return int
     }, 
     setTimeout: setTimeout,
     clearInterval: clearInterval,
     clearTimeout: clearTimeout,
+    setImmediate: setImmediate,
     require: function (r) {
       if(~coreIo.indexOf(r))
         throw new Error('script *must not* access core io modules')
@@ -46,10 +46,11 @@ function createContext () {
 
     //TODO: make these safe...
 
-    process: process
+    process: process,
   }
 
   context.global = context
+  context.window = context
 
   return context
 }
