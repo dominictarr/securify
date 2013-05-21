@@ -70,15 +70,4 @@ var createFactory = module.exports = function (bundle) {
   )
 }
 
-if(!module.parent) {
-  var fs = require('fs')
-  var bundle = fs.readFileSync(process.argv[2], 'utf-8')
-  var db = require('levelup')(process.argv[3])
-  var domain = createFactory(bundle)(db)
-  setTimeout(function () {
-    db.close(function (err, cb) {
-      domain.dispose()
-    })
-  }, 3000)
-}
 
