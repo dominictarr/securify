@@ -5,6 +5,7 @@ var toPull = require('stream-to-pull-stream')
 var pull   = require('pull-stream')
 var brfs   = require('brfs')
 var insert = require('insert-module-globals')
+var through = require('through')
 
 var core = require('./core.json')
 var fs    = require('fs')
@@ -17,6 +18,12 @@ var bundle = module.exports = function (dbFile, cb) {
     }})
     .pipe(bmeta().on('meta', function (m) {
       s.emit('meta', m)
+    }))
+    .pipe(through(function (row) {
+       if (/\.json$/.test(row.id)) {
+            row.source = 'module.exports=' + row.source;
+        }
+        this.queue(row)
     }))
     .pipe(insert())
     .pipe(brfs())
