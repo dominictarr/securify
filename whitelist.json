@@ -1,0 +1,23 @@
+[
+  "assert",
+  "buffer",
+  "console",
+  "constants",
+  "crypto",
+  "events",
+  "freelist",
+  "module",
+  "os",
+  "path",
+  "punycode",
+  "querystring",
+  "readline",
+  "repl",
+  "stream",
+  "string_decoder",
+  "sys",
+  "timers",
+  "url",
+  "util",
+  "zlib"
+]

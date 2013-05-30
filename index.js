@@ -1,6 +1,6 @@
 var vm = require('vm')
 var Domain = require('domain')
-var coreIo = require('./core-io.json')
+var whitelist = require('./whitelist.json')
 
 function createContext () {
 
@@ -39,8 +39,9 @@ function createContext () {
     clearTimeout: clearTimeout,
     setImmediate: setImmediate,
     require: function (r) {
-      if(~coreIo.indexOf(r))
-        throw new Error('script *must not* access core io modules')
+      if(!~whitelist.indexOf(r))
+        throw new Error('script *must not* access module: ' + r )
+      return require(r)
     }, 
     createDomain: createDomain,
 
