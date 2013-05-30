@@ -8,7 +8,7 @@
     "url": "git://github.com/dominictarr/securify.git"
   },
   "dependencies": {
-    "module-deps": "~0.6.2",
+    "module-deps": ">=0.10 <1",
     "browser-pack": "~0.8.0",
     "optimist": "~0.4.0",
     "bundle-metadata": "~1.0.0",
