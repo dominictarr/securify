@@ -2,12 +2,13 @@ var vm = require('vm')
 var Domain = require('domain')
 var whitelist = require('./whitelist.json')
 
-function createContext () {
+function createContext (id) {
 
   var domain = Domain.create()
 
   domain.on('error', function (err) {
-    console.error('error inside context', err)
+    console.error('error inside context:'+id)
+    console.error(err.stack)
     domain.dispose()
     context.dispose()
   })
@@ -24,16 +25,14 @@ function createContext () {
   var intervals = []
   var context = {
     console: {
-      log: console.log,
-      error: console.error
+      log: function () {
+        domain.emit('console_log', [].splice.call(arguments))
+      },
+      error: function () {
+        domain.emit('console_error', [].splice.call(arguments))
+      },
     },
-    setInterval: function (fun, i) {
-      console.error('setInterval', fun.name || fun.toString().substring(0, 100)+'...')
-    
-      var int = setInterval(fun, i)
-      intervals.push(int)
-      return int
-    }, 
+    setInterval: setInterval,
     setTimeout: setTimeout,
     clearInterval: clearInterval,
     clearTimeout: clearTimeout,
