@@ -12,8 +12,6 @@
     "browser-pack": "~0.8.0",
     "optimist": "~0.4.0",
     "bundle-metadata": "~1.0.0",
-    "shoe": "0.0.10",
-    "stack": "~0.1.0",
     "insert-module-globals": "~0.2.1",
     "brfs": "0.0.5",
     "through": "~2.3.4"
