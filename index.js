@@ -10,7 +10,6 @@ function createContext (id) {
     console.error('error inside context:'+id)
     console.error(err.stack)
     domain.dispose()
-    context.dispose()
   })
 
   var started = false
@@ -39,7 +38,7 @@ function createContext (id) {
     setImmediate: setImmediate,
     require: function (r) {
       if(!~whitelist.indexOf(r))
-        throw new Error('script *must not* access module: ' + r )
+        return domain.emit('error', new Error('script *must not* access module: ' + r ))
       return require(r)
     }, 
     createDomain: createDomain,
