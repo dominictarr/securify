@@ -9,15 +9,14 @@
   },
   "dependencies": {
     "module-deps": ">=0.10 <1",
-    "browser-pack": "~0.8.0",
     "optimist": "~0.4.0",
     "bundle-metadata": "~1.0.0",
     "insert-module-globals": "~0.2.1",
     "brfs": "0.0.5",
-    "through": "~2.3.4"
+    "through": "~2.3.4",
+    "browser-pack": "~0.9.1"
   },
-  "devDependencies": {
-  },
+  "devDependencies": {},
   "scripts": {
     "test": "set -e; for t in test/*.js; do node $t; done"
   },
