@@ -25,10 +25,10 @@ function createContext (id) {
   var context = {
     console: {
       log: function () {
-        domain.emit('console_log', [].splice.call(arguments))
+        domain.emit('console_log', [].slice.call(arguments))
       },
       error: function () {
-        domain.emit('console_error', [].splice.call(arguments))
+        domain.emit('console_error', [].slice.call(arguments))
       },
     },
     setInterval: setInterval,
