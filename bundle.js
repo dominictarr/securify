@@ -10,6 +10,13 @@ var through = require('through')
 var core = require('./core.json')
 var fs    = require('fs')
 
+var vars = {
+  __filename: insert.vars.__filename,
+  __dirname: insert.vars.__dirname
+}
+
+
+
 var prelude = fs.readFileSync(__dirname + '/prelude.js', 'utf-8')
 
 var bundle = module.exports = function (dbFile, cb) {
@@ -25,7 +32,7 @@ var bundle = module.exports = function (dbFile, cb) {
         }
         this.queue(row)
     }))
-    .pipe(insert())
+    .pipe(insert({vars: vars}))
     .pipe(brfs())
     .pipe(bpack({raw: true, prelude: prelude}))
     
