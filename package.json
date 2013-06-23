@@ -1,7 +1,7 @@
 {
   "name": "securify",
   "description": "run a browserify-like bundle inside a node-vm",
-  "version": "1.1.8",
+  "version": "1.1.9",
   "homepage": "https://github.com/dominictarr/securify",
   "repository": {
     "type": "git",
