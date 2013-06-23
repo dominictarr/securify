@@ -11,8 +11,7 @@
     "module-deps": ">=0.10 <1",
     "optimist": "~0.4.0",
     "bundle-metadata": "~1.0.0",
-    "insert-module-globals":
-      "git://github.com/dominictarr/insert-module-globals.git#injectable",
+    "insert-module-globals": "1.1",
     "brfs": "0.0.5",
     "through": "~2.3.4",
     "browser-pack": "~0.9.1"
